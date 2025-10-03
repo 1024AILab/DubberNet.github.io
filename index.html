@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Harnessing the Power of Audio-Visual Collaboration for Video-based Person ReID</title>
+  <style>
+    :root{
+      --fg:#1f2937; --muted:#6b7280; --bg:#ffffff; --card:#f8fafc; --border:#e5e7eb; --link:#2563eb;
+    }
+    *{box-sizing:border-box}
+    body{margin:0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "PingFang SC","Microsoft YaHei", sans-serif;
+         color:var(--fg); background:var(--bg); line-height:1.6;}
+    a{color:var(--link); text-decoration:none}
+    a:hover{opacity:.9; text-decoration:underline}
+    .container{max-width:1100px; margin:0 auto; padding:40px 20px}
+    header h1{margin:0 0 6px; font-size:32px; text-align:center}
+    header .sub{color:var(--muted); text-align:center; margin-bottom:14px}
+    header .links{display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:24px}
+    hr{border:none; border-top:1px solid var(--border); margin:28px 0}
+    section h2{margin:0 0 14px; font-size:24px}
+    .teaser{display:flex; justify-content:center}
+    img{max-width:100%; height:auto; border-radius:8px}
+    code, pre{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;}
+    pre{background:var(--card); border:1px solid var(--border); border-radius:8px; padding:12px; overflow:auto}
+    .grid-audio{width:100%}
+    figure{margin:0; padding:12px; background:var(--card); border:1px solid var(--border); border-radius:12px}
+    figcaption{color:var(--muted); margin-top:6px}
+    table{width:100%; border-collapse:collapse; border:1px solid var(--border); background:#fff}
+    th,td{border:1px solid var(--border); padding:8px; text-align:center; vertical-align:middle}
+    thead th{background:#f3f4f6}
+    .note{color:var(--muted); font-size:14px}
+    .gallery td{vertical-align:top}
+    .badge{display:inline-block; background:#eef2ff; border:1px solid #e0e7ff; color:#3730a3; padding:2px 8px; border-radius:999px; font-size:12px}
+    .section-gap{margin-top:6px}
+    /* Specific widths for audio players in galleries */
+    .av-gallery audio{width:256px; margin-top:6px}
+    .dubbing-gallery audio{width:256px}
+    .center{display:flex; justify-content:center}
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <h1>Harnessing the Power of Audio-Visual Collaboration for Video-based Person ReID</h1>
+      <div class="sub"><span class="badge">Project Home</span></div>
+      <div class="links">
+        <a href="#" target="_blank">Paper</a>
+        <span>·</span>
+        <a href="#" target="_blank">Dataset (TED)</a>
+        <span>·</span>
+        <a href="#" target="_blank">Code</a>
+      </div>
+    </header>
+
+    <hr/>
+
+    <section id="highlights">
+      <h2>🌟 Highlights</h2>
+      <ul>
+        <li>We propose a <b>noval Dubbing-based audio-visual collaborative framework</b> named <b>DubberNet</b> for video-based person ReID. To the best of our knowledge, we are the first to introduce audio for advancing this field.</li>
+        <li>We propose an effective <b>multimodal learning and transfer mechanism</b> that employs a <b>Simple Injection Module (SIM)</b> and a <b>Simple Perception Module (SPM)</b> to learn multimodal features, and our approach can effectively operate in both audio-visual and purely visual settings.</li>
+        <li>Together with the proposed <b>Frame Attention Mechanism (FAM)</b>, our method achieves state-of-the-art performance on three standard video-based ReID datasets, namely <b>MARS</b>, <b>iLIDS-VID</b>, and <b>PRID</b>.</li>
+      </ul>
+    </section>
+
+    <hr/>
+
+    <section id="teaser">
+      <h2>🖼️ Teaser</h2>
+      <div class="teaser">
+        <img src="asset/f3.png" alt="Method Overview" width="720">
+      </div>
+    </section>
+
+    <hr/>
+
+    <section id="ted-gallery" class="av-gallery">
+      <h2>🎧 TED Audio-Visual Mini Gallery</h2>
+
+      <table class="gallery">
+        <tr>
+          <td align="center">
+            <figure>
+              <p>
+                <img src="./asset/ted_samples/002/002.gif" alt="TED sample 002" width="256" height="128">
+              </p>
+              <figcaption><sub>Sample Group #1 · PID 002</sub></figcaption>
+              <audio controls preload="none">
+                <source src="./asset/ted_samples/002/002.wav" type="audio/wav">
+                Your browser does not support the audio element.
+              </audio>
+            </figure>
+          </td>
+          <td align="center">
+            <figure>
+              <p>
+                <img src="./asset/ted_samples/008/008.gif" alt="TED sample 008" width="256" height="128">
+              </p>
+              <figcaption><sub>Sample Group #2 · PID 008</sub></figcaption>
+              <audio controls preload="none">
+                <source src="./asset/ted_samples/008/008.wav" type="audio/wav">
+                Your browser does not support the audio element.
+              </audio>
+            </figure>
+          </td>
+          <td align="center">
+            <figure>
+              <p>
+                <img src="./asset/ted_samples/013/013.gif" alt="TED sample 013" width="256" height="128">
+              </p>
+              <figcaption><sub>Sample Group #3 · PID 013</sub></figcaption>
+              <audio controls preload="none">
+                <!-- (Your markdown used 008.wav here; changed to 013.wav to match PID 013) -->
+                <source src="./asset/ted_samples/013/013.wav" type="audio/wav">
+                Your browser does not support the audio element.
+              </audio>
+            </figure>
+          </td>
+        </tr>
+        <tr>
+          <td align="center">
+            <figure>
+              <p>
+                <img src="./asset/ted_samples/032/032.gif" alt="TED sample 032" width="256" height="128">
+              </p>
+              <figcaption><sub>Sample Group #4 · PID 032</sub></figcaption>
+              <audio controls preload="none">
+                <source src="./asset/ted_samples/032/032.wav" type="audio/wav">
+                Your browser does not support the audio element.
+              </audio>
+            </figure>
+          </td>
+          <td align="center">
+            <figure>
+              <p>
+                <img src="./asset/ted_samples/034/034.gif" alt="TED sample 034" width="256" height="128">
+              </p>
+              <figcaption><sub>Sample Group #5 · PID 034</sub></figcaption>
+              <audio controls preload="none">
+                <source src="./asset/ted_samples/034/034.wav" type="audio/wav">
+                Your browser does not support the audio element.
+              </audio>
+            </figure>
+          </td>
+          <td align="center">
+            <figure>
+              <p>
+                <img src="./asset/ted_samples/037/037.gif" alt="TED sample 037" width="256" height="128">
+              </p>
+              <figcaption><sub>Sample Group #6 · PID 037</sub></figcaption>
+              <audio controls preload="none">
+                <source src="./asset/ted_samples/037/037.wav" type="audio/wav">
+                Your browser does not support the audio element.
+              </audio>
+            </figure>
+          </td>
+        </tr>
+      </table>
+    </section>
+
+    <hr/>
+
+    <section id="dubbing" class="dubbing-gallery">
+      <h2>🔊 Dubbing Dataset Mini Gallery (Audio Only)</h2>
+
+      <!-- ID 0001 -->
+      <table class="grid-audio">
+        <tr>
+          <td></td>
+          <td align="center"><b>PID 0001</b></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td align="center">
+            <audio controls preload="none">
+              <source src="./asset/Mars/0001/1.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          </td>
+          <td align="center">
+            <audio controls preload="none">
+              <source src="./asset/Mars/0001/2.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          </td>
+          <td align="center">
+            <audio controls preload="none">
+              <source src="./asset/Mars/0001/3.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          </td>
+        </tr>
+      </table>
+
+      <br/>
+
+      <!-- ID 0003 -->
+      <table class="grid-audio">
+        <tr>
+          <td></td>
+          <td align="center"><b>PID 0003</b></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td align="center">
+            <audio controls preload="none">
+              <source src="./asset/Mars/0003/1.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          </td>
+          <td align="center">
+            <audio controls preload="none">
+              <source src="./asset/Mars/0003/2.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          </td>
+          <td align="center">
+            <audio controls preload="none">
+              <source src="./asset/Mars/0003/3.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          </td>
+        </tr>
+      </table>
+
+      <br/>
+
+      <!-- ID 0005 -->
+      <table class="grid-audio">
+        <tr>
+          <td></td>
+          <td align="center"><b>PID 0005</b></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td align="center">
+            <audio controls preload="none">
+              <source src="./asset/Mars/0005/1.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          </td>
+          <td align="center">
+            <audio controls preload="none">
+              <source src="./asset/Mars/0005/2.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          </td>
+          <td align="center">
+            <audio controls preload="none">
+              <source src="./asset/Mars/0005/3.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          </td>
+        </tr>
+      </table>
+    </section>
+
+    <hr/>
+
+    <section id="install">
+      <h2>📦 Installation</h2>
+      <pre><code class="language-bash">conda create -n avreid python=3.10 -y
+conda activate avreid
+pip install -r requirements.txt</code></pre>
+    </section>
+
+    <hr/>
+
+    <section id="data">
+      <h2>📁 Data Preparation (TED)</h2>
+      <pre><code>data/
+└── TED/
+    ├── train/
+    ├── query/
+    ├── gallery/
+    ├── train_audio/
+    ├── query_audio/
+    └── gallery_audio/</code></pre>
+    </section>
+
+    <hr/>
+
+    <section id="quickstart">
+      <h2>🚀 Quick Start</h2>
+      <pre><code class="language-bash"># train
+python train.py --cfg configs/av_reid_ted.yaml</code></pre>
+    </section>
+
+    <hr/>
+
+    <section id="results">
+      <h2>📊 Results</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Method</th><th>Venue</th><th>PRID R1</th><th>PRID R5</th><th>iLIDS R1</th><th>iLIDS R5</th><th>MARS R1</th><th>MARS mAP</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>SCAN</td><td>TIP 2019</td><td>95.3</td><td>99.0</td><td>88.0</td><td>96.7</td><td>87.2</td><td>77.2</td></tr>
+          <tr><td>AdaGraph</td><td>TIP 2020</td><td>94.6</td><td>99.1</td><td>84.5</td><td>96.7</td><td>89.5</td><td>81.9</td></tr>
+          <tr><td>MGH</td><td>CVPR 2020</td><td>94.8</td><td>99.3</td><td>85.6</td><td>97.1</td><td>90.0</td><td>85.8</td></tr>
+          <tr><td>MG-RAFA</td><td>CVPR 2020</td><td>95.9</td><td>99.7</td><td>88.6</td><td>98.0</td><td>88.8</td><td>85.9</td></tr>
+          <tr><td>STRF</td><td>ICCV 2021</td><td>-</td><td>-</td><td>89.3</td><td>-</td><td>90.3</td><td>86.1</td></tr>
+          <tr><td>PhD</td><td>CVPR 2021</td><td>96.6</td><td>97.8</td><td>-</td><td>-</td><td>88.9</td><td>86.2</td></tr>
+          <tr><td>CTL</td><td>CVPR 2021</td><td>-</td><td>-</td><td>89.7</td><td>97.0</td><td>91.4</td><td>86.7</td></tr>
+          <tr><td>MFA</td><td>TIP 2022</td><td>95.5</td><td>100.0</td><td>93.3</td><td>99.3</td><td>90.4</td><td>85.0</td></tr>
+          <tr><td>MSTAT</td><td>TMM 2022</td><td>-</td><td>-</td><td>93.3</td><td>99.3</td><td>91.8</td><td>85.3</td></tr>
+          <tr><td>AGW</td><td>TPAMI 2022</td><td>94.4</td><td>98.4</td><td>83.2</td><td>98.3</td><td>87.6</td><td>83.0</td></tr>
+          <tr><td>SGMN</td><td>TCSVT 2022</td><td>-</td><td>-</td><td>88.6</td><td>96.7</td><td>90.8</td><td>85.3</td></tr>
+          <tr><td>CAViT</td><td>ECCV 2022</td><td>95.5</td><td>98.9</td><td>93.3</td><td>98.0</td><td>90.8</td><td>87.2</td></tr>
+          <tr><td>SINet</td><td>CVPR 2022</td><td>-</td><td>-</td><td>92.5</td><td>-</td><td>91.0</td><td>86.2</td></tr>
+          <tr><td>FIND</td><td>TIP 2023</td><td>-</td><td>-</td><td>91.3</td><td>98.0</td><td>91.4</td><td>86.8</td></tr>
+          <tr><td>RGCN</td><td>TCSVT 2023</td><td>-</td><td>-</td><td>90.2</td><td>98.5</td><td>91.1</td><td>86.5</td></tr>
+          <tr><td>STFE</td><td>TMM 2024</td><td>-</td><td>-</td><td>-</td><td>-</td><td>94.5</td><td>89.5</td></tr>
+          <tr><td>HASI</td><td>TCSVT 2024</td><td>96.1</td><td>98.7</td><td>93.3</td><td>99.6</td><td>91.4</td><td>87.5</td></tr>
+          <tr><td>TMT</td><td>TITS 2024</td><td>-</td><td>-</td><td>91.3</td><td>98.6</td><td>91.8</td><td>86.5</td></tr>
+          <tr><td>TF-CLIP</td><td>AAAI 2024</td><td>-</td><td>-</td><td>94.5</td><td>99.1</td><td>93.0</td><td>89.4</td></tr>
+          <tr><td>TCViT</td><td>AAAI 2024</td><td>-</td><td>-</td><td>94.3</td><td>99.3</td><td>91.7</td><td>87.6</td></tr>
+          <tr><td>3DAPRL</td><td>TCSVT 2025</td><td>96.6</td><td>98.9</td><td>94.7</td><td>98.7</td><td>93.1</td><td>90.3</td></tr>
+          <tr><td>PCPT</td><td>TIP 2025</td><td>96.4</td><td>-</td><td>92.9</td><td>-</td><td>90.9</td><td>86.6</td></tr>
+          <tr><td>DS-VReID</td><td>IJCV 2025</td><td>95.5</td><td>-</td><td>94.0</td><td>-</td><td>92.3</td><td>87.6</td></tr>
+          <tr><td><b>DubberNet-S</b></td><td>Ours</td><td><b>96.6</b></td><td><b>100.0</b></td><td><b>96.0</b></td><td><b>100.0</b></td><td><b>97.0</b></td><td><b>90.5</b></td></tr>
+        </tbody>
+      </table>
+      <p class="note"><b>Table 1.</b> Comparison with state-of-the-art video-based person ReID methods on PRID, iLIDS-VID, and MARS datasets. <b>Bold indicates the best.</b></p>
+    </section>
+
+    <hr/>
+
+    <section id="citation">
+      <h2>📜 Citation</h2>
+      <pre><code class="language-bibtex">@inproceedings{YourAVReID2025,
+  title={Harnessing the Power of Audio-Visual Collaboration for Video-based Person ReID},
+  author={You, A. and Collaborators, B.},
+  booktitle={Proceedings of ...},
+  year={2025}
+}</code></pre>
+    </section>
+
+    <hr/>
+
+    <section id="license">
+      <h2>📄 License</h2>
+      <p>This repo is released under the MIT License (see <code>LICENSE</code>).</p>
+    </section>
+
+    <hr/>
+
+    <section id="ack">
+      <h2>🤝 Acknowledgements</h2>
+      <p>We thank the contributors and dataset providers (including TED) for their support.</p>
+    </section>
+
+    <hr/>
+
+    <section id="contact">
+      <h2>📧 Contact</h2>
+      <ul>
+        <li>Maintainer: your.name (youremail@example.com)</li>
+        <li>Issues: please open a GitHub Issue</li>
+      </ul>
+    </section>
+
+  </div>
+</body>
+</html>
