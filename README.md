@@ -7,8 +7,11 @@
 
 ## 🌟 Highlights
 - We propose a noval Dubbing-based audio-visual collaborative framework named DubberNet for video-based person ReID. To the best of our knowledge, we are the first to introduce audio for advancing this field.
-- We propose an effective multimodal learning and transfer mechanism that employs a Simple Injection Module (SIM) and a Simple Perception Module (SPM) to learn multimodal features, and our approach can effectively operate in both audio-visual and purely visual settings.
-- Together with the proposed Frame Attention Mechanism (FAM), our method achieves state-of-the-art performance on three standard video-based ReID datasets, namely MARS, iLIDS-VID, and PRID.
+- We propose an efficient multimodal learning and transfer mechanism that employs a Simple Injection (SI) module to efficiently fuse audio and a structurally consistent Simple Perception (SP) module to perceive knowledge.
+- We propose a token-wise selective distillation strategy, in which a mask generator (MG) adaptively preserves informative tokens, allowing the student to inherit more robust knowledge from the teacher.
+- Extensive experiments demonstrates that DubberNet outperforms the state-of-the-art methods on three standard benchmarks (MARS, iLIDS-VID, and PRID), achieving Rank-1 accuracy of 97.0% and 96.0% on MARS and iLIDS-VID, respectively.
+
+
 ---
 
 ## 🖼️ Teaser
