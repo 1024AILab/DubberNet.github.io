@@ -225,9 +225,18 @@ data/
 ---
 
 ## 🚀 Quick Start
+
+If you want to train the model on the TED dataset, follow the instruction in [TED](https://github.com/1024AILab/TED.git).
+
 ```bash
-# train
-python train.py --cfg configs/av_reid_ted.yaml
+# To train the teacher model run:
+python -u VID_Trans_ReID.py --Dataset_name 'PRID'
+# To train the student model run:
+python -u VID_KD_demo.py --Dataset_name 'PRID'
+# To train the teacher model run:
+python -u VID_Trans_ReID.py --Dataset_name 'Mars'
+# To train the student model run:
+python -u VID_KD_demo.py --Dataset_name 'Mars'
 ```
 
 ---
