@@ -1,9 +1,32 @@
+``
+
 # Harnessing the Power of Audio-Visual Collaboration for Video-based Person ReID
 
 > **Project Home** for our paper: *Harnessing the Power of Audio-Visual Collaboration for Video-based Person ReID*  
 > [Paper] | [Project Page] | [Dataset (TED)]
 
+
+
+## 📚 Table of Contents
+
+- [🌟 Highlights](#highlights)
+- [🖼️ Teaser](#teaser)
+- [🎧 TED Audio-Visual Mini Gallery](#ted-audio-visual-mini-gallery)
+- [🔊 Dubbing Dataset Mini Gallery (Audio Only)](#dubbing-dataset-mini-gallery-audio-only)
+- [📦 Installation](#installation)
+- [📁 Data Preparation](#data-preparation)
+- [🚀 Quick Start](#quick-start)
+- [📊 Results](#results)
+- [📜 Citation](#citation)
+- [📄 License](#license)
+- [🤝 Acknowledgements](#acknowledgements)
+- [📧 Contact](#contact)
+
+
+
 ---
+
+<a id="highlights"></a>
 
 ## 🌟 Highlights
 - We propose a noval Dubbing-based audio-visual collaborative framework named DubberNet for video-based person ReID. To the best of our knowledge, we are the first to introduce audio for advancing this field.
@@ -14,12 +37,14 @@
 
 ---
 
+<a id="teaser"></a>
 ## 🖼️ Teaser
 <p align="center">
   <img src="asset/f3.png" alt="Method Overview" width="720">
 </p>
 
 ---
+<a id="ted-audio-visual-mini-gallery"></a>
 ## 🎧 TED Audio-Visual Mini Gallery
 
 <table>
@@ -114,6 +139,7 @@
 </table>
 
 ---
+<a id="dubbing-dataset-mini-gallery-audio-only"></a>
 ## 🔊 Dubbing Dataset Mini Gallery (Audio Only)
 
 <table>
@@ -201,6 +227,7 @@
 
 ---
 
+<a id="installation"></a>
 ## 📦 Installation
 ```bash
 conda create -n avreid python=3.10 -y
@@ -212,6 +239,7 @@ pip install -r requirements.txt
 
 ---
 
+<a id="data-preparation"></a>
 # 📁 Data Preparation
 
 ## 1) Download Common Voice Scripted Speech 24.0 (English)
@@ -310,6 +338,7 @@ cam2_audio_path = r'xxx\sequences\cam2_audio'
 
 ---
 
+<a id="quick-start"></a>
 ## 🚀 Quick Start
 
 If you want to train the model on the TED dataset, follow the instruction in [TED](https://github.com/1024AILab/TED.git).
@@ -327,6 +356,7 @@ python -u VID_KD_demo.py --Dataset_name 'Mars'
 
 ---
 
+<a id="results"></a>
 ## 📊 Results
 | Method       | Venue      | PRID R1 | PRID R5 | iLIDS R1 | iLIDS R5 | MARS R1 | MARS mAP |
 |--------------|------------|:-------:|:-------:|:--------:|:--------:|:-------:|:--------:|
@@ -359,6 +389,7 @@ python -u VID_KD_demo.py --Dataset_name 'Mars'
 
 ---
 
+<a id="citation"></a>
 ## 📜 Citation
 ```bibtex
 @inproceedings{YourAVReID2025,
@@ -371,16 +402,19 @@ python -u VID_KD_demo.py --Dataset_name 'Mars'
 
 ---
 
+<a id="license"></a>
 ## 📄 License
 This repo is released under the MIT License (see `LICENSE`).
 
 ---
 
+<a id="acknowledgements"></a>
 ## 🤝 Acknowledgements
 We thank the contributors and dataset providers (including TED) for their support.
 
 ---
 
+<a id="contact"></a>
 ## 📧 Contact
 - Maintainer: your.name (youremail@example.com)
 - Issues: please open a GitHub Issue
