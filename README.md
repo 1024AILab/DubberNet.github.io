@@ -1,5 +1,3 @@
-``
-
 # Harnessing the Power of Audio-Visual Collaboration for Video-based Person ReID
 
 > **Project Home** for our paper: *Harnessing the Power of Audio-Visual Collaboration for Video-based Person ReID*  
@@ -17,10 +15,6 @@
 - [📁 Data Preparation](#data-preparation)
 - [🚀 Quick Start](#quick-start)
 - [📊 Results](#results)
-- [📜 Citation](#citation)
-- [📄 License](#license)
-- [🤝 Acknowledgements](#acknowledgements)
-- [📧 Contact](#contact)
 
 
 
