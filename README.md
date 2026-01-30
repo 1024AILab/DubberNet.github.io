@@ -208,19 +208,105 @@ conda activate avreid
 pip install -r requirements.txt
 ```
 
+
+
 ---
 
-## 📁 Data Preparation (TED)
+# 📁 Data Preparation
+
+## 1) Download Common Voice Scripted Speech 24.0 (English)
+1. Download **Common Voice Scripted Speech 24.0 – English** from:  
+   https://datacollective.mozillafoundation.org/datasets/cmj8u3p1w0075nxxbe8bedl00
+2. Extract the archive. After extraction, you should have (at least):
+   - `.../en/train.tsv`
+   - `.../clips/` (audio files)
+
+> We use `train.tsv` + `clips/` to allocate audio to each identity in the ReID datasets.
+
+---
+
+## 2) Update dataset paths in `audio_allocate/`
+Before running audio allocation, update the paths in the scripts below.  
+Replace all `xxx` with your **absolute local path**.
+
+---
+
+## ✅ MARS / PRID / iLIDS-VID (Path Configuration)
+
+### MARS
+**Edit:** `audio_allocate/Mars.py`
+
+```python
+train_path = r'xxx\bbox_train'
+test_path  = r'xxx\Mars\bbox_test'
+
+tsv_paths = [
+    (r'xxx\en\train.tsv', r'xxx\clips'),
+]
+
+train_audio_path = r'xxx\Mars\bbox_train_audio'
+test_audio_path  = r'xxx\Mars\bbox_test_audio'
 ```
-data/
-└── TED/
-    ├── train/
-    ├── query/              
-    ├── gallery/
-    ├── train_audio/
-    ├── query_audio/
-    └── gallery_audio/              
+
+**Path meanings**
+- `train_path`: MARS training set image directory (`bbox_train`)
+- `test_path`: MARS test set image directory (`bbox_test`)
+- `tsv_paths`: Common Voice English `train.tsv` and corresponding `clips/` directory
+- `train_audio_path`: output directory for audio-augmented training set
+- `test_audio_path`: output directory for audio-augmented test set
+
+---
+
+### PRID (multi-shot)
+**Edit:** `audio_allocate/PRID.py`
+
+```python
+cam1_path = r'xxx\multi_shot\cam_a'
+cam2_path = r'xxx\multi_shot\cam_b'
+
+tsv_path = r'xxx\train.tsv'
+audio_clips_path = r'xxx\clips'
+
+cam1_audio_path = r'xxx\multi_shot\cam_a_audio'
+cam2_audio_path = r'xxx\multi_shot\cam_b_audio'
 ```
+
+**Path meanings**
+- `cam1_path`: PRID camera A image directory (`multi_shot/cam_a`)
+- `cam2_path`: PRID camera B image directory (`multi_shot/cam_b`)
+- `tsv_path`: Common Voice `train.tsv`
+- `audio_clips_path`: Common Voice `clips/` directory
+- `cam1_audio_path`: output directory for camera A with allocated audio
+- `cam2_audio_path`: output directory for camera B with allocated audio
+
+---
+
+### iLIDS-VID
+**Edit:** `audio_allocate/iLIDS-VID.py`
+
+```python
+cam1_path = r'xxx\sequences\cam1'
+cam2_path = r'xxx\sequences\cam2'
+
+tsv_path = r'xxx\train.tsv'
+audio_clips_path = r'xxx\clips'
+
+cam1_audio_path = r'xxx\sequences\cam1_audio'
+cam2_audio_path = r'xxx\sequences\cam2_audio'
+```
+
+**Path meanings**
+- `cam1_path`: iLIDS-VID camera 1 sequences directory (`sequences/cam1`)
+- `cam2_path`: iLIDS-VID camera 2 sequences directory (`sequences/cam2`)
+- `tsv_path`: Common Voice `train.tsv`
+- `audio_clips_path`: Common Voice `clips/` directory
+- `cam1_audio_path`: output directory for camera 1 with allocated audio
+- `cam2_audio_path`: output directory for camera 2 with allocated audio
+
+
+
+
+
 
 ---
 
