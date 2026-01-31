@@ -229,8 +229,6 @@ conda activate avreid
 pip install -r requirements.txt
 ```
 
-
-
 ---
 
 <a id="data-preparation"></a>
@@ -241,14 +239,31 @@ pip install -r requirements.txt
    https://datacollective.mozillafoundation.org/datasets/cmj8u3p1w0075nxxbe8bedl00
 2. Extract the archive. After extraction, you should have (at least):
    - `.../en/train.tsv`
-   - `.../clips/` (audio files)
+   - `.../en/clips/` (all the audio files are under this folder)
 
 > We use `train.tsv` + `clips/` to allocate audio to each identity in the ReID datasets. Specifically, we index each entry by `client_id` and link it to the corresponding audio file under `clips/` via the `path` field (i.e., the audio filename); an example row from `train.tsv` is shown below.
-> ```text client_id	path	sentence	up_votes	down_votes	age	gender	accent	locale	segment f1f6414c04e74453065e1b7fc1639c6f728dc03ed9589034b8531d8c7d8b994f223f2b79d5fcc42a2b7b19f8cbca5af08f31d47a554ddd682df04ba62caaaa56 common_voice_en_20009651.mp3	"It just didn't seem fair."	2	1				en	```
+> | client_id | path | sentence | up_votes | down_votes | age | gender | accent | locale | segment |
+> |---|---|---|---:|---:|---|---|---|---|---|
+> | `f1f6414c04e74453065e1b7fc1639c6f728dc03ed9589034b8531d8c7d8b994f223f2b79d5fcc42a2b7b19f8cbca5af08f31d47a554ddd682df04ba62caaaa56` | `common_voice_en_20009651.mp3` | "It just didn't seem fair." | 2 | 1 |  |  |  | en |  |
 
 ---
 
-## 2) Update dataset paths in `audio_allocate/`
+
+
+
+## 2) Download ReID Datasets
+Please download the following person ReID datasets from their official pages:
+
+- **MARS**: https://zheng-lab-anu.github.io/Project/project_mars.html  
+- **iLIDS-VID**: https://xiatian-zhu.github.io/downloads_qmul_iLIDS-VID_ReID_dataset.html  
+- **PRID 2011**: https://www.tugraz.at/institute/icg/research/team-bischof/learning-recognition-surveillance/downloads/prid11/
+
+---
+
+
+
+
+## 3) Update dataset paths in `audio_allocate/`
 Before running audio allocation, update the paths in the scripts below.  
 Replace all `xxx` with your **absolute local path**.
 
@@ -260,7 +275,7 @@ Replace all `xxx` with your **absolute local path**.
 **Edit:** `audio_allocate/Mars.py`
 
 ```python
-train_path = r'xxx\bbox_train'
+train_path = r'xxx\Mars\bbox_train'
 test_path  = r'xxx\Mars\bbox_test'
 
 tsv_paths = [
@@ -326,12 +341,10 @@ cam2_audio_path = r'xxx\sequences\cam2_audio'
 - `cam1_audio_path`: output directory for camera 1 with allocated audio
 - `cam2_audio_path`: output directory for camera 2 with allocated audio
 
-
-
-
-
-
 ---
+
+
+
 
 <a id="quick-start"></a>
 ## 🚀 Quick Start
@@ -412,4 +425,4 @@ We thank the contributors and dataset providers (including TED) for their suppor
 <a id="contact"></a>
 ## 📧 Contact
 - Maintainer: your.name (youremail@example.com)
-- Issues: please open a GitHub Issue
+- Issues: please open a GitHub `Issue`
