@@ -243,7 +243,8 @@ pip install -r requirements.txt
    - `.../en/train.tsv`
    - `.../clips/` (audio files)
 
-> We use `train.tsv` + `clips/` to allocate audio to each identity in the ReID datasets.
+> We use `train.tsv` + `clips/` to allocate audio to each identity in the ReID datasets. Specifically, we index each entry by `client_id` and link it to the corresponding audio file under `clips/` via the `path` field (i.e., the audio filename); an example row from `train.tsv` is shown below.
+> ```text client_id	path	sentence	up_votes	down_votes	age	gender	accent	locale	segment f1f6414c04e74453065e1b7fc1639c6f728dc03ed9589034b8531d8c7d8b994f223f2b79d5fcc42a2b7b19f8cbca5af08f31d47a554ddd682df04ba62caaaa56 common_voice_en_20009651.mp3	"It just didn't seem fair."	2	1				en	```
 
 ---
 
